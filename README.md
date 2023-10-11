@@ -1,7 +1,5 @@
 ## About
 
-Back End
+Back End for [Property Management Tool Application] (https://github.com/wghile/PM-Tool-Express)
 
-Built with Express, NodeJS, Mongoose, MongoDB
-
-## Resources
+Built with Express, Node JS, Mongoose, MongoDB
