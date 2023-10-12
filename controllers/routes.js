@@ -22,8 +22,16 @@ const Property = require('../models/property')
     //Update
         router.put('/:id', async(req, res) => {
             try{
-                const updatedProperty = await Property.findByIdAndUpdate(req.params.id, req.body)
-                res.json(updatedProperty)
+                const updates = {
+                    address: req.body.address,
+                    city: req.body.city,
+                    zip: req.body.zip,
+                    country: req.body.country,
+                    name: req.body.name
+                }
+                const updatedProperty = await Property.findByIdAndUpdate(req.params.id, updates)
+                // res.json(updatedProperty)
+                return res.status(201).send(updatedProperty)
             }catch(error){
                 console.log(error)
             }
