@@ -20,12 +20,43 @@ const Property = require('../models/property')
     //Delete
 
     //Update
+        router.put('/:id', async(req, res) => {
+            try{
+                const updatedProperty = await Property.findByIdAndUpdate(req.params.id, req.body)
+                res.json(updatedProperty)
+            }catch(error){
+                console.log(error)
+            }
+        })
 
     //Create
+        router.post('/', async(req, res) => {
+            try{
+                const newProperty = {
+                    address: req.body.address,
+                    city: req.body.city,
+                    zip: req.body.zip,
+                    country: req.body.country,
+                    name: req.body.name
+                }
+                const property = await Property.create(newProperty)
+                // res.json(newProperty)
+                return res.status(201).send(property)
+            }catch(error){
+                console.log(error)
+            }
+        })
 
     //Edit
-
+        router.get('/:id', async(req, res) => {
+            try{
+                const property = await Property.findById(req.params.id)
+                res.json(property)
+            }catch(error){
+                console.error(error)
+            }
+        })
     //Show
 
-    
+
 module.exports = router

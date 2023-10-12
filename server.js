@@ -26,11 +26,12 @@ app.use((req, res, next) => {
 })
 app.use(express.urlencoded({extended: false}))  //body-parser package
 // app.use(express.static('public'))
+app.use(express.json())
 app.use(cors({origin: '*'}))
 
 //Setting Controller
 const propertyController = require('./controllers/routes')
-app.use('/property', propertyController)
+app.use('/', propertyController)
 
 //Server Status Check
 app.listen(process.env.PORT || 3001, () => {
