@@ -18,6 +18,14 @@ const Property = require('../models/property')
     //New
 
     //Delete
+        router.delete('/:id', async(req, res) => {
+            try{
+                await Property.findByIdAndDelete(req.params.id)
+                return res.status(200).send({message: 'Property has been deleted'})
+            }catch(error){
+                console.error(error)
+            }
+        })
 
     //Update
         router.put('/:id', async(req, res) => {
@@ -64,6 +72,7 @@ const Property = require('../models/property')
                 console.error(error)
             }
         })
+
     //Show
 
 
