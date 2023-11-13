@@ -30,8 +30,11 @@ app.use(express.json())
 app.use(cors({origin: '*'}))
 
 //Setting Controller
-const propertyController = require('./controllers/routes')
-app.use('/', propertyController)
+const propertyController = require('./controllers/property-routes')
+app.use('/property', propertyController)
+
+const documentController = require('./controllers/document-routes')
+app.use('/documents', documentController)
 
 //Server Status Check
 app.listen(process.env.PORT || 3001, () => {
