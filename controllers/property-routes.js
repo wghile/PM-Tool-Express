@@ -38,7 +38,6 @@ const Property = require('../models/property')
                     name: req.body.name
                 }
                 const updatedProperty = await Property.findByIdAndUpdate(req.params.id, updates)
-                // res.json(updatedProperty)
                 return res.status(201).send(updatedProperty)
             }catch(error){
                 console.log(error)
