@@ -35,8 +35,10 @@ const Property = require('../models/property')
                     city: req.body.city,
                     zip: req.body.zip,
                     country: req.body.country,
-                    name: req.body.name
+                    name: req.body.name,
+                    docs: req.body.docs
                 }
+                console.log(updates)
                 const updatedProperty = await Property.findByIdAndUpdate(req.params.id, updates)
                 return res.status(201).send(updatedProperty)
             }catch(error){
@@ -55,7 +57,6 @@ const Property = require('../models/property')
                     name: req.body.name
                 }
                 const property = await Property.create(newProperty)
-                // res.json(newProperty)
                 return res.status(201).send(property)
             }catch(error){
                 console.log(error)
