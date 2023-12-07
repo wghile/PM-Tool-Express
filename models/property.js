@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const serviceSchema = new mongoose.Schema({
+const requestSchema = new mongoose.Schema({
     date: {type: String, required: true},
     status: {type: String, required: true},
     location: {type: String, required: true},
@@ -21,7 +21,7 @@ const propertySchema = new mongoose.Schema({
     country: {type: String, required: true},
     name: {type: String},
     docs: [docSchema],
-    services: [serviceSchema]
+    requests: [requestSchema]
 })
 
 const Property = mongoose.model('Property', propertySchema)
