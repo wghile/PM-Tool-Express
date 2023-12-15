@@ -30,10 +30,10 @@ app.use(cors({origin: '*'}))
 
 //Setting Controller
 const propertyController = require('./controllers/property-routes')
-app.use('/', propertyController)
+app.use('/property', propertyController)
 
-const contactsController = require('./controllers/contacts-routes')
-app.use('/contacts', contactsController)
+const contactController = require('./controllers/contact-routes')
+app.use('/contacts', contactController)
 
 //Server Status Check
 app.listen(process.env.PORT || 3001, () => {

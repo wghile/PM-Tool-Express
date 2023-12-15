@@ -2,18 +2,18 @@
 
 const express = require('express')
 const router = express.Router()
-const Contacts = require('../models/contacts')
+const Contact = require('../models/contact')
 
 //Routes: INDUCES
-    //Index
-        // router.get('/', async(req, res) => {
-        //     try{
-        //         const properties = await Property.find()
-        //         res.json(properties)
-        //     }catch(error){
-        //         console.error(error)
-        //     }
-        // })
+    // Index
+        router.get('/', async(req, res) => {
+            try{
+                const contacts = await Contact.find()
+                res.json(contacts)
+            }catch(error){
+                console.error(error)
+            }
+        })
 
     //New
 
