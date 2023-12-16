@@ -18,14 +18,14 @@ const Contact = require('../models/contact')
     //New
 
     //Delete
-        // router.delete('/:id', async(req, res) => {
-        //     try{
-        //         await Property.findByIdAndDelete(req.params.id)
-        //         return res.status(200).send({message: 'Property has been deleted'})
-        //     }catch(error){
-        //         console.error(error)
-        //     }
-        // })
+        router.delete('/:id', async(req, res) => {
+            try{
+                await Contact.findByIdAndDelete(req.params.id)
+                return res.status(200).send({message: 'Contact has been deleted'})
+            }catch(error){
+                console.error(error)
+            }
+        })
 
     //Update
         // router.put('/:id', async(req, res) => {
@@ -39,35 +39,35 @@ const Contact = require('../models/contact')
         //             docs: req.body.docs,
         //             requests: req.body.requests
         //         }
-        //         const updatedProperty = await Property.findByIdAndUpdate(req.params.id, updates)
-        //         return res.status(201).send(updatedProperty)
+        //         const updatedContact = await Contact.findByIdAndUpdate(req.params.id, updates)
+        //         return res.status(201).send(updatedContact)
         //     }catch(error){
         //         console.log(error)
         //     }
         // })
 
     //Create
-        // router.post('/', async(req, res) => {
-        //     try{
-        //         const newProperty = {
-        //             address: req.body.address,
-        //             city: req.body.city,
-        //             zip: req.body.zip,
-        //             country: req.body.country,
-        //             name: req.body.name
-        //         }
-        //         const property = await Property.create(newProperty)
-        //         return res.status(201).send(property)
-        //     }catch(error){
-        //         console.log(error)
-        //     }
-        // })
+        router.post('/', async(req, res) => {
+            try{
+                const newContact = {
+                    name: req.body.name,
+                    number: req.body.number,
+                    occupation: req.body.occupation,
+                    company: req.body.company
+                }
+                const contact = await Contact.create(newContact)
+                return res.status(201).send(contact)
+            }catch(error){
+                console.log(error)
+            }
+            console.log(req)
+        })
 
     //Edit
         // router.get('/:id', async(req, res) => {
         //     try{
-        //         const property = await Property.findById(req.params.id)
-        //         res.json(property)
+        //         const contact = await Contact.findById(req.params.id)
+        //         res.json(contact)
         //     }catch(error){
         //         console.error(error)
         //     }
