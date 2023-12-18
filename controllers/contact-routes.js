@@ -27,25 +27,8 @@ const Contact = require('../models/contact')
             }
         })
 
-    //Update
-        // router.put('/:id', async(req, res) => {
-        //     try{
-        //         const updates = {
-        //             address: req.body.address,
-        //             city: req.body.city,
-        //             zip: req.body.zip,
-        //             country: req.body.country,
-        //             name: req.body.name,
-        //             docs: req.body.docs,
-        //             requests: req.body.requests
-        //         }
-        //         const updatedContact = await Contact.findByIdAndUpdate(req.params.id, updates)
-        //         return res.status(201).send(updatedContact)
-        //     }catch(error){
-        //         console.log(error)
-        //     }
-        // })
-
+    // Update
+    
     //Create
         router.post('/', async(req, res) => {
             try{
@@ -64,14 +47,6 @@ const Contact = require('../models/contact')
         })
 
     //Edit
-        // router.get('/:id', async(req, res) => {
-        //     try{
-        //         const contact = await Contact.findById(req.params.id)
-        //         res.json(contact)
-        //     }catch(error){
-        //         console.error(error)
-        //     }
-        // })
 
     //Show
 
